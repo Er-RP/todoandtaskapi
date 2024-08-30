@@ -10,7 +10,7 @@ export const UsersResolver = {
                 return {
                     success: true,
                     total: users?.length,
-                    users
+                    data:users
                 };
             } catch (error) {
                 throw error;

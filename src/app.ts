@@ -12,14 +12,12 @@ const server = new ApolloServer({
     introspection : true
   });
 
-const start = async () => {
+(async () => {
     try {
-        connectDB(config.MONGO_URI)
+        await connectDB(config.MONGO_URI)
         startStandaloneServer(server, { listen: { port: config.PORT } });
         console.log(`Server is listening on port ${config.PORT}`)
     } catch (error) {
         console.log(error)
     }
-}
-
-start()
+})()

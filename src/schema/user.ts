@@ -1,11 +1,10 @@
 import { buildSchema } from "graphql";
 
-export const usersGQLSchema = buildSchema(`
+export const usersGQLSchema = buildSchema(`#graphql
     type User {
         id: String!
         username: String!
         email: String!
-        password: String!
         role: UserRole
         createdAt: String!
         updatedAt: String!
@@ -24,7 +23,7 @@ export const usersGQLSchema = buildSchema(`
     type usersInfoResponse {
         success: Boolean!
         total: Int!
-        users: [User!]!
+        data: [User!]!
     }
 
     type Mutation {
